@@ -1230,40 +1230,44 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" onsubmit="return false;">
-          <div class="form-group">
-            <label class="form-label">Your name</label>
-            <input class="form-input" type="text" placeholder="First and last name">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email address</label>
-            <input class="form-input" type="email" placeholder="you@company.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Company</label>
-            <input class="form-input" type="text" placeholder="Company name">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Where you are in your journey</label>
-            <select class="form-select">
-              <option value="" disabled selected>Select one</option>
-              <option>Pre-seed / Seed</option>
-              <option>Series A</option>
-              <option>Series B</option>
-              <option>Growth stage</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">What you'd like to explore</label>
-            <textarea class="form-textarea" placeholder="A sentence or two is enough — I'll follow up with questions."></textarea>
-          </div>
-          <!-- Honeypot anti-spam field — hidden from humans -->
-          <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
-            <label>Leave this field empty <input type="text" name="_honeypot" tabindex="-1" autocomplete="off"></label>
-          </div>
-          <button class="form-submit" type="submit">Send message →</button>
-        </form>
+       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="21b178dc-c1f3-41e8-8998-ad7bc153b43d">
+  <input type="hidden" name="subject" value="New enquiry - lizgriffioen.com">
+  <input type="hidden" name="redirect" value="false">
+
+  <div class="form-group">
+    <label class="form-label">Your name</label>
+    <input class="form-input" type="text" name="name" placeholder="First and last name" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email address</label>
+    <input class="form-input" type="email" name="email" placeholder="you@company.com" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Company</label>
+    <input class="form-input" type="text" name="company" placeholder="Company name">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Where you are in your journey</label>
+    <select class="form-select" name="journey_stage">
+      <option value="" disabled selected>Select one</option>
+      <option>Pre-seed / Seed</option>
+      <option>Series A</option>
+      <option>Series B</option>
+      <option>Growth stage</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-label">What you'd like to explore</label>
+    <textarea class="form-textarea" name="message" placeholder="A sentence or two is enough — I'll follow up with questions."></textarea>
+  </div>
+
+  <!-- Honeypot anti-spam -->
+  <input type="checkbox" name="botcheck" style="display:none;">
+
+  <button class="form-submit" type="submit">Send message →</button>
+</form>
       </div>
     </div>
   </div>
